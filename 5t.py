@@ -12,12 +12,16 @@ def click(event, x, y, flags, param):
 if __name__ == '__main__':
 
     # Cargar ruta de carpeta
-    path = r'C:\Users\Laura\Desktop\Procesamiento imagenes\stitching'
+    #path = r'C:\Users\Laura\Desktop\Procesamiento imagenes\stitching'
+    path = r'C:\Users\sngh9\OneDrive\Escritorio\Maestria_Semestre_2\Procesamiento_de_imagenes\Taller_5'
     files = os.listdir(path)
+    files = [file for file in files if 'png' in file ]
     count = 0
-    # Leer cada uno de las imagenes que se encuentrar en la carpeta para acer stitching
+    print(files)
+    # Leer cada uno de las imagenes que se encuentrar en la carpeta para hacer stitching
     for file in files:
         image_path = path + "/" + file
+        print(image_path)
         image = cv2.imread(image_path)
         count += 1
         n = file
